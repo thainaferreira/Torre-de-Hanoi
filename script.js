@@ -1,31 +1,29 @@
 const box = document.getElementById('box')
 
-let subBox1 = document.createElement('div')
-subBox1.className = 'sub-box1'
-let pilar1 = document.createElement('div')
-pilar1.className = 'pilar'
-let base1 = document.createElement('div')
-base1.className = 'base'
-subBox1.appendChild(pilar1)
-subBox1.appendChild(base1)
-box.appendChild(subBox1)
+for (let i = 1; i <= 3; i++){
+    let subBox = document.createElement('div')
+    subBox.setAttribute('id', `sub-box${i}`)
+    let pilar = document.createElement('div')
+    pilar.className = 'pilar'
+    let base = document.createElement('div')
+    base.className = 'base'
+    subBox.appendChild(pilar)
+    subBox.appendChild(base)
+    box.appendChild(subBox)
+}
 
-let subBox2 = document.createElement('div')
-subBox2.className = 'sub-box2'
-let pilar2 = document.createElement('div')
-pilar2.className = 'pilar'
-let base2 = document.createElement('div')
-base2.className = 'base'
-subBox2.appendChild(pilar2)
-subBox2.appendChild(base2)
-box.appendChild(subBox2)
+const subBox1 = document.getElementById('sub-box1')
 
-let subBox3 = document.createElement('div')
-subBox3.className = 'sub-box3'
-let pilar3 = document.createElement('div')
-pilar3.className = 'pilar'
-let base3 = document.createElement('div')
-base3.className = 'base'
-subBox3.appendChild(pilar3)
-subBox3.appendChild(base3)
-box.appendChild(subBox3)
+let diskOrange = document.createElement('div')
+diskOrange.setAttribute('id', 'diskOrange')
+let diskGreen = document.createElement('div')
+diskGreen.setAttribute('id', 'diskGreen')
+let diskBlue = document.createElement('div')
+diskBlue.setAttribute('id', 'diskBlue')
+let diskRed = document.createElement('div')
+diskRed.setAttribute('id', 'diskRed')
+
+subBox1.appendChild(diskOrange)
+subBox1.appendChild(diskGreen)
+subBox1.appendChild(diskBlue)
+subBox1.appendChild(diskRed)
