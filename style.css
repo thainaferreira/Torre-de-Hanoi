@@ -63,7 +63,7 @@ div.marcador {
         h3.vitória span {}
         h3.derrota span {}
 
-div.box {
+div#box {
     height: 100%;
     width: 100%;
     display: flex;
