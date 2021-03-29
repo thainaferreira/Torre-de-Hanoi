@@ -70,32 +70,26 @@ div#box {
     justify-content: space-evenly;
 }
 
-div.sub-box1 {
+div#sub-box1, #sub-box2, #sub-box3 {
     background-color: #1687a7;
     height: 45%;
     width: 20%;
     border-radius: 10px;
-}
-
-div.sub-box2 {
-    background-color: #1687a7;
-    height: 45%;
-    width: 20%;
-    border-radius: 10px;
-}
-
-div.sub-box3 {
-    background-color: #1687a7;
-    height: 45%;
-    width: 20%;
-    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
 }
 
 div.pilar {
     height: 80%;
     width: 7px;
+    position: absolute;
     background-color: black;
     margin: 20px auto 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 div.base {
@@ -103,4 +97,40 @@ div.base {
     width: 90%;
     background-color: black;
     margin: 0 auto;
+}
+
+div#diskOrange{
+    width: 80%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: orange;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+div#diskGreen{
+    width: 70%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: green;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+div#diskBlue{
+    width: 60%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: blue;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+div#diskRed{
+    width: 50%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: red;
+    margin: 0 auto;
+    z-index: 2;
 }
