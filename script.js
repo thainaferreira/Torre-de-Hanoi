@@ -17,20 +17,15 @@ const subBox1 = document.getElementById('sub-box1')
 const subBox2 = document.getElementById('sub-box2')
 const subBox3 = document.getElementById('sub-box3')
 
+let x = 4
 
-let disk1 = document.createElement('div')
-disk1.setAttribute('id', 'disk1')
-let disk2 = document.createElement('div')
-disk2.setAttribute('id', 'disk2')
-let disk3 = document.createElement('div')
-disk3.setAttribute('id', 'disk3')
-let disk4 = document.createElement('div')
-disk4.setAttribute('id', 'disk4')
-
-subBox1.appendChild(disk1)
-subBox1.appendChild(disk2)
-subBox1.appendChild(disk3)
-subBox1.appendChild(disk4)
+for (let i = 0; i < x; i++){
+    let disk = document.createElement('div')
+    disk.setAttribute('id', `disk${i + 1}`)
+    disk.className = 'disco'
+    disk.dataset.value = x - i
+    subBox1.appendChild(disk)
+}
 
 
 
@@ -47,24 +42,21 @@ subBox1.appendChild(disk4)
 
 
 // 1 - evitar que os dos iFs sejam executados simultaneamente
-let variavelDeControle = true
-let movingDisk
+let movingDisk = undefined
 
 function moveDisk1(event) {
-    movingDisk = event.target
-    if(variavelDeControle === false) {
-        subBox1.appendChild(movingDisk)
+    if (!movingDisk){
+        let discoDiv = event.target.lastElementChild
+        if (discoDiv.className === 'disco'){
+            movingDisk = discoDiv
+        }
+    } else {
+        event.target.appendChild(movingDisk)
+        movingDisk = undefined
     }
-    variavelDeControle = true
-    
-    if(variavelDeControle === true) {
-        movingDisk = subBox1.removeChild(subBox1.lastElementChild)
-        
-    }
-    variavelDeControle = false
-    console.log(variavelDeControle)
-   
-
+    console.log(event.target)
 }
 
-box.addEventListener('click', moveDisk1)
+subBox1.addEventListener('click', moveDisk1)
+subBox2.addEventListener('click', moveDisk1)
+subBox3.addEventListener('click', moveDisk1)
