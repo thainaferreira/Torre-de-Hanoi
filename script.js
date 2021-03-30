@@ -1,5 +1,9 @@
 const box = document.getElementById('box')
 
+const restSpan = document.getElementById('rest')
+const victorySpan = document.getElementById('victory')
+const defeatSpan = document.getElementById('defeat')
+
 for (let i = 1; i <= 3; i++){
     let subBox = document.createElement('div')
     subBox.setAttribute('id', `sub-box${i}`)
@@ -53,9 +57,32 @@ function moveDisk1(event) {
         event.target.appendChild(movingDisk)
         movingDisk = undefined
     }
-    console.log(event.target)
 }
 
 subBox1.addEventListener('click', moveDisk1)
 subBox2.addEventListener('click', moveDisk1)
 subBox3.addEventListener('click', moveDisk1)
+
+
+ 
+//a logica da condicao de vitoria
+//na hora de clicar no destino
+//verifica se o lastelement atual de onde voce ta clicando
+//tem o value maior ou menor que o que voce ta jogando
+//evt.target.dataset.value < mydisk.dataset.value
+//assim voce verifica se o movimento e possivel
+//e pra saber se ganhou
+//verifica se o arr.length da torre é 4
+//entao verifica se a ultima torre tem 4 elementos
+//no caso 6 contando a base e o pilar
+
+let rest = 20
+let victory = 0
+let defeat = 0
+
+function score(){
+    restSpan.innerText = rest
+    victorySpan.innerText = victory
+    defeatSpan.innerText = defeat
+}
+score()
