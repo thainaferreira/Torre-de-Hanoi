@@ -1,5 +1,6 @@
 const box = document.getElementById('box')
 
+
 for (let i = 1; i <= 3; i++){
     let subBox = document.createElement('div')
     subBox.setAttribute('id', `sub-box${i}`)
@@ -44,18 +45,29 @@ for (let i = 0; i < x; i++){
 let movingDisk = undefined
 
 function moveDisk1(event) {
+    let targetDisk = event.currentTarget.lastElementChild
     if (!movingDisk){
         let discoDiv = event.target.lastElementChild
+        console.log('oi' , movingDisk)
         if (discoDiv.className === 'disco'){
             movingDisk = discoDiv
+            event.target.removeChild(movingDisk)
         }
-    } else {
+    } else if(targetDisk.dataset.value === undefined) {
         event.target.appendChild(movingDisk)
         movingDisk = undefined
-    }
-    console.log(event.target)
+    } else  {
+        if(movingDisk.dataset.value < targetDisk.dataset.value){
+        event.target.appendChild(movingDisk)
+        movingDisk = undefined
+        }
+        
+    } 
+    
 }
 
 subBox1.addEventListener('click', moveDisk1)
 subBox2.addEventListener('click', moveDisk1)
 subBox3.addEventListener('click', moveDisk1)
+
+console.log(disk1.dataset.value)
