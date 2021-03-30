@@ -1,5 +1,6 @@
 const box = document.getElementById('box')
 
+
 for (let i = 1; i <= 3; i++){
     let subBox = document.createElement('div')
     subBox.setAttribute('id', `sub-box${i}`)
