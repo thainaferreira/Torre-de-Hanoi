@@ -44,20 +44,17 @@ div.marcador {
         div.jogadas h3 { 
             display: inline-block;
         }
-        div.jogadas span {}
 
     div.placar {
         display: flex;
         justify-content: flex-end;
     }
-        h3.vitória {
+        div.placar h3{
             display: inline-block;
         }
-        h3.derrota {
-            display: inline-block;
+        #victory{
+            padding-right: 12px;
         }
-        h3.vitória span {}
-        h3.derrota span {}
 
 div#box {
     height: 100%;
