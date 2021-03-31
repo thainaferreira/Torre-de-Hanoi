@@ -1,5 +1,8 @@
 const box = document.getElementById('box')
 
+const restSpan = document.getElementById('rest')
+const victorySpan = document.getElementById('victory')
+const defeatSpan = document.getElementById('defeat')
 
 for (let i = 1; i <= 3; i++){
     let subBox = document.createElement('div')
@@ -27,28 +30,31 @@ for (let i = 0; i < x; i++){
     subBox1.appendChild(disk)
 }
 
+let rest = 20
+let victory = 0
+let defeat = 0
+let boxVic = document.querySelectorAll(subBox3)[0]
+console.log(boxVic)
 
+function score(){
+    if (boxVic.length === 6){
+        victory++
+    }
+    if (rest === 0){
+        defeat++
+    }
+    restSpan.innerText = rest
+    victorySpan.innerText = victory
+    defeatSpan.innerText = defeat
+}
+score()
 
-// handler de clique nos discos
-// 1 - quando clicar na div sub-box
-// 2 - mover o disco acima
-// 3 - mudar o estado da variável de controle
-// 4 - quando clicar em outra sub-box
-// 5 - verificar se tem algum disco menor ou maior (Math.min com width?)
-// 6 - fazer verificação de aceitação
-// 7 - depositar o disco se possível
-// 8 - mudar o estado da variável de controle novamente
-// 9 - reduzir o numero de jogadas
-
-
-// 1 - evitar que os dos iFs sejam executados simultaneamente
 let movingDisk = undefined
 
 function moveDisk1(event) {
     let targetDisk = event.currentTarget.lastElementChild
     if (!movingDisk){
         let discoDiv = event.target.lastElementChild
-        console.log('oi' , movingDisk)
         if (discoDiv.className === 'disco'){
             movingDisk = discoDiv
             event.target.removeChild(movingDisk)
@@ -56,18 +62,16 @@ function moveDisk1(event) {
     } else if(targetDisk.dataset.value === undefined) {
         event.target.appendChild(movingDisk)
         movingDisk = undefined
+        rest--
+        score()
     } else  {
         if(movingDisk.dataset.value < targetDisk.dataset.value){
         event.target.appendChild(movingDisk)
         movingDisk = undefined
         }
-        
-    } 
-    
-}
+      } 
+    }
 
 subBox1.addEventListener('click', moveDisk1)
 subBox2.addEventListener('click', moveDisk1)
 subBox3.addEventListener('click', moveDisk1)
-
-console.log(disk1.dataset.value)
