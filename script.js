@@ -54,6 +54,9 @@ let movingDisk = undefined
 function moveDisk1(event) {
     let targetDisk = event.currentTarget.lastElementChild
     if (!movingDisk){
+        if(rest === 0) {
+            movingDisk = undefined
+        }
         let discoDiv = event.target.lastElementChild
         if (discoDiv.className === 'disco'){
             movingDisk = discoDiv
@@ -63,11 +66,14 @@ function moveDisk1(event) {
         event.target.appendChild(movingDisk)
         movingDisk = undefined
         rest--
+        console.log(rest)
         score()
     } else  {
         if(movingDisk.dataset.value < targetDisk.dataset.value){
         event.target.appendChild(movingDisk)
         movingDisk = undefined
+        rest--
+        console.log(rest)
         }
       } 
     }
