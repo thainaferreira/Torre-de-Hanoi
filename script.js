@@ -20,6 +20,19 @@ const subBox1 = document.getElementById('sub-box1')
 const subBox2 = document.getElementById('sub-box2')
 const subBox3 = document.getElementById('sub-box3')
 
+function resetGame(){
+    rest = 20
+    restSpan.innerText = rest
+    let disk1 = document.getElementById('disk1')
+    let disk2 = document.getElementById('disk2')
+    let disk3 = document.getElementById('disk3')
+    let disk4 = document.getElementById('disk4')
+    subBox1.appendChild(disk1)
+    subBox1.appendChild(disk2)
+    subBox1.appendChild(disk3)
+    subBox1.appendChild(disk4)
+}
+
 let x = 4
 
 for (let i = 0; i < x; i++){
@@ -33,15 +46,15 @@ for (let i = 0; i < x; i++){
 let rest = 20
 let victory = 0
 let defeat = 0
-// let boxVic = document.querySelector('.subBox3').children
 
 function score(){
-    if (subBox3.childNodes.length === 6){
-        console.log('oi' ,subBox3.childNodes)
+    let resultDiv = document.getElementById('sub-box3')
+    if(resultDiv.childElementCount === 6){
         victory++
-    }
-    if (rest === 0){
+        resetGame()
+    } else if (rest === 0){
         defeat++
+        resetGame()
     }
     restSpan.innerText = rest
     victorySpan.innerText = victory
@@ -54,28 +67,24 @@ let movingDisk = undefined
 function moveDisk1(event) {
     let targetDisk = event.currentTarget.lastElementChild
     if (!movingDisk){
-        if(rest === 0) {
-            movingDisk = undefined
-        }
-        let discoDiv = event.target.lastElementChild
-        if (discoDiv.className === 'disco'){
-            movingDisk = discoDiv
+        if (targetDisk.className === 'disco'){
+            movingDisk = targetDisk
             event.target.removeChild(movingDisk)
         }
-    } else if(targetDisk.dataset.value === undefined) {
-        event.target.appendChild(movingDisk)
+    } else if (targetDisk.dataset.value === undefined) {
+        event.currentTarget.appendChild(movingDisk)
         movingDisk = undefined
         rest--
         console.log(rest)
         score()
     } else  {
         if(movingDisk.dataset.value < targetDisk.dataset.value){
-        event.target.appendChild(movingDisk)
+        event.currentTarget.appendChild(movingDisk)
         movingDisk = undefined
         rest--
-        console.log(rest)
         }
-      } 
+      }
+      score()
     }
 
 subBox1.addEventListener('click', moveDisk1)
