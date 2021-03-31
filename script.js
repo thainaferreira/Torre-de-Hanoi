@@ -33,11 +33,11 @@ for (let i = 0; i < x; i++){
 let rest = 20
 let victory = 0
 let defeat = 0
-let boxVic = document.querySelectorAll(subBox3)[0]
-console.log(boxVic)
 
 function score(){
-    if (boxVic.length === 6){
+    let childCount = document.getElementById('sub-box3').childElementCount
+    console.log(childCount)
+    if (childCount === 6){
         victory++
     }
     if (rest === 0){
