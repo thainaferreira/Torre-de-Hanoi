@@ -41,7 +41,7 @@ for (let i = 0; i < x; i++){
 // 9 - reduzir o numero de jogadas
 
 
-// 1 - evitar que os dos iFs sejam executados simultaneamente
+
 let movingDisk = undefined
 
 function moveDisk1(event) {
