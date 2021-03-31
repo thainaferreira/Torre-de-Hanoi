@@ -75,6 +75,8 @@ function moveDisk1(event) {
         event.currentTarget.appendChild(movingDisk)
         movingDisk = undefined
         rest--
+        console.log(rest)
+        score()
     } else  {
         if(movingDisk.dataset.value < targetDisk.dataset.value){
         event.currentTarget.appendChild(movingDisk)
