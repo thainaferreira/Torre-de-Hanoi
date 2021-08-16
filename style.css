@@ -1,156 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Wendy+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Wendy+One&display=swap");
 
-*{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    background-image: url(./img/fundo2.jpg);
+  height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+  background-image: url(./img/fundo2.jpg);
 }
 
-div#title{
-    padding-top: 30px;
-    display: flex;
-    justify-content: center;
+div#title {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
 }
-div#title img{
-    width: 80vw;
+div#title img {
+  width: 80vw;
 }
 
 div.marcador {
-    width: 80%;
-    height: 20%;
-    padding-top: 30px;
-    display: flex;
-    flex-direction: column;
-    margin: 0  auto;
-    font-family: 'Wendy One', sans-serif;
-    color: #000;
-    font-size: 16px;
+  width: 80%;
+  height: 20%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: "Wendy One", sans-serif;
+  color: #000;
+  font-size: 16px;
 }
 
-    div.jogadas {
-        display: flex;
-        justify-content: flex-end;
-    }
+div.jogadas {
+  display: flex;
+  justify-content: flex-end;
+}
 
-        div.jogadas h3 { 
-            display: inline-block;
-        }
+div.jogadas h3 {
+  display: inline-block;
+}
 
-    div.placar {
-        display: flex;
-        justify-content: flex-end;
-    }
-        div.placar h3{
-            display: inline-block;
-        }
-        #victory{
-            padding-right: 12px;
-        }
+div.placar {
+  display: flex;
+  justify-content: flex-end;
+}
+div.placar h3 {
+  display: inline-block;
+}
+#victory {
+  padding-right: 12px;
+}
 
 div#box {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-div#sub-box1, #sub-box2, #sub-box3 {
-    background-color: #0000002c;
-    height: 45%;
-    width: 30%;
-    border-radius: 10px;
-    position: relative;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
+div#sub-box1,
+#sub-box2,
+#sub-box3 {
+  background-color: #0000002c;
+  height: 45%;
+  width: 30%;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
 }
 
 div.pilar {
-    height: 80%;
-    width: 10px;
-    position: absolute;
-    background-image: url(./img/wood2.jpg);
-    border-radius: 10px;
-    border: 2px rgb(156, 109, 78) solid;
-    margin: 20px auto 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+  height: 80%;
+  width: 10px;
+  position: absolute;
+  background-image: url(./img/wood2.jpg);
+  border-radius: 10px;
+  border: 2px rgb(156, 109, 78) solid;
+  margin: 20px auto 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 div.base {
-    height: 15px;
-    width: 90%;
-    background-image: url(./img/wood.jpg);
-    border: 2px rgb(156, 109, 78) solid;
-    margin: 0 auto;
-    z-index: 1;
+  height: 15px;
+  width: 90%;
+  background-image: url(./img/wood.jpg);
+  border: 2px rgb(156, 109, 78) solid;
+  margin: 0 auto;
+  z-index: 1;
 }
 
-div#disk1{
-    width: 80%;
-    height: 20px;
-    border-radius: 10px;
-    background-image: url(./img/disco1.jpg);
-    border: 2px solid #a81c19;
-    margin: 0 auto;
-    z-index: 2;
+div#disk1 {
+  width: 80%;
+  height: 20px;
+  border-radius: 10px;
+  background-image: url(./img/disco1.jpg);
+  border: 2px solid #a81c19;
+  margin: 0 auto;
+  z-index: 2;
 }
 
-div#disk2{
-    width: 70%;
-    height: 20px;
-    border-radius: 10px;
-    background-image: url(./img/disco2.jpg);
-    border: 2px solid #b63013;
-    margin: 0 auto;
-    z-index: 2;
+div#disk2 {
+  width: 70%;
+  height: 20px;
+  border-radius: 10px;
+  background-image: url(./img/disco2.jpg);
+  border: 2px solid #b63013;
+  margin: 0 auto;
+  z-index: 2;
 }
 
-div#disk3{
-    width: 60%;
-    height: 20px;
-    border-radius: 10px;
-    background-image: url(./img/disco3.jpg);
-    border: 2px solid #d45717;
-    margin: 0 auto;
-    z-index: 2;
+div#disk3 {
+  width: 60%;
+  height: 20px;
+  border-radius: 10px;
+  background-image: url(./img/disco3.jpg);
+  border: 2px solid #d45717;
+  margin: 0 auto;
+  z-index: 2;
 }
 
-div#disk4{
-    width: 50%;
-    height: 20px;
-    border-radius: 10px;
-    background-image: url(./img/disco4.jpg);
-    border: 2px solid #a3750a;
-    margin: 0 auto;
-    z-index: 2;
+div#disk4 {
+  width: 50%;
+  height: 20px;
+  border-radius: 10px;
+  background-image: url(./img/disco4.jpg);
+  border: 2px solid #a3750a;
+  margin: 0 auto;
+  z-index: 2;
 }
 
-@media screen and (min-width: 768px){
-    div#title img{
-        width: 55vw;
-    }
-    div.marcador{
-        font-size: 20px;
-    }
-    div#sub-box1, #sub-box2, #sub-box3{
-        width: 20%;
-    }
-    div.base {
-        height: 25px;
-    }
+@media screen and (min-width: 768px) {
+  div#title img {
+    width: 55vw;
+  }
+  div.marcador {
+    font-size: 20px;
+  }
+  div#sub-box1,
+  #sub-box2,
+  #sub-box3 {
+    width: 20%;
+  }
+  div.base {
+    height: 25px;
+  }
 }
 
 span {
-    margin-left: 5px;
+  margin-left: 5px;
 }
